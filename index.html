@@ -4,9 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css\index.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p|Quicksand|Source+Sans+Pro&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
+  <h1>The Delay Time of TTC Subway in May</h1>
+  <h2>TTC subway Lines</h2>
+   <svg height="300" width="600">
+     <g>
+      <circle cx="120" cy="17" r="15" fill="yellow" stroke="black" stroke-width="2.5"/>
+      <text x="114" y="22">1</text>
+      <line x1="160" y1="19" x2="300" y2="19" stroke="yellow" stroke-width="4" />
+     </g>
+     <g>
+        <circle cx="120" cy="59" r="15" fill="green" stroke="black" stroke-width="2.5"/>
+        <text x="114" y="64">2</text>
+        <line x1="160" y1="62" x2="300" y2="62" stroke="green" stroke-width="4"/>
+    </g>
+
+    <g>
+        <circle cx="120" cy="101" r="15" fill="blue" stroke="black" stroke-width="2.5"/>
+        <text x="114" y="106">3</text>
+        <line x1="160" y1="104" x2="300" y2="104" stroke="blue" stroke-width="4"/>
+    </g>
+
+    <g>
+        <circle cx="120" cy="143" r="15" fill="purple" stroke="black" stroke-width="2.5"/>
+        <text x="114" y="148">4</text>
+        <line x1="160" y1="146" x2="300" y2="146" stroke="purple" stroke-width="4"/>
+    </g>
+
+  </svg>
+
+    <svg id="time-line" width="1200" height="10000">
+      </svg>
+
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="js\index.js"></script>
 </body>
