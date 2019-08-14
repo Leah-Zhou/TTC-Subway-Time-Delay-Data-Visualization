@@ -16,7 +16,8 @@ h2{
 #time-line{
  
    background-color:rgba(32, 21, 21, 0.904); 
-  margin:1em 3em;
+  margin:2em 3em;
+  /* padding-top:1em; */
 
 }
 
