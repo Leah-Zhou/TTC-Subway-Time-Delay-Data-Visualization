@@ -1,4 +1,4 @@
-d3.json(`data/trandata.json`).then(dataset=>{
+d3.json(`data/maydata.json`).then(dataset=>{
   // narrow down the data from original data
   // dataset = dataset.filter(delay => delay.minDelay > 0 && delay.minDelay < 20).slice(0, 100);
   console.log(dataset)
@@ -18,7 +18,7 @@ d3.json(`data/trandata.json`).then(dataset=>{
 
   let quantities = newData.length;
 
-const height = 800
+const height = 1300
 const width =2500
    
 
@@ -28,9 +28,9 @@ const width =2500
   .data(newData)
   .enter()
   .append(`line`)
-  .attr(`x1`,(num,i)=>newData[i].timeInHrs*(width/24))
+  .attr(`x1`,(num,i)=>newData[i].timeInHrs*(width/24)+40)
   .attr(`y1`,height)
-  .attr(`x2`,(num,i)=>newData[i].timeInHrs*(width/24)) // delay time in hour
+  .attr(`x2`,(num,i)=>newData[i].timeInHrs*(width/24)+40) // delay time in hour
   .attr(`y2`,(num,i)=>height-newData[i].minDelay*(height/d3.max(newData,obj=>obj.minDelay))) //how long it delay in mins
   .attr(`stroke-width`,1.5)
   .attr(`stroke`,(num,i)=>newData[i].color)
@@ -47,26 +47,37 @@ const width =2500
 
 
 
-const max = d3.max(newData,obj=>obj.timeInHrs)
+const maxMins = d3.max(newData,obj=>obj.minDelay)
+const minMins = d3.min(newData,obj=>obj.minDelay)
+const minsRange =d3.extent(newData,obj=>obj.minDelay)
+
+console.log(maxMins)
+
+ var yAxis = d3.scaleLinear()
+               .domain(minsRange)
+               .range([height,0])
+ const yScale= d3.axisLeft()
+                .scale(yAxis)
+                 .ticks(10)
+
+ d3.select(`#time-line`)
+  .append(`g`)
+  .attr(`transform`,`translate(60,0)`)
+  .attr(`stroke`,`white`)
+  .classed(`axis-color`,true)
+  // .attr(`stroke-width`,1)
+
+   .call(yScale)
 
 
 
- const axis = d3.select(`#time-line`)
- .append(`svg`)
- .attr(`width`,width)
- .attr(`height`,height)
-
- let scale = d3.scaleLinear()
-               .domain([0,d3.max(newData,obj=>obj.timeInHrs)])
-               .range(0,width)
 
 
 
-  let xaxis = d3.axisBottom()
-                .scale(scale)
 
-//  axis.append(`g`)
-//      .call(xaxis)
+
+
+
 
 
 
@@ -105,3 +116,5 @@ const max = d3.max(newData,obj=>obj.timeInHrs)
 
 
 })
+
+

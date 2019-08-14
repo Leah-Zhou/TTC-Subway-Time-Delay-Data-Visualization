@@ -4,12 +4,12 @@ body{
   
 }
 h1{
-  font-size: 2.25em;
-  margin:2em;
+  font-size: 7em;
+  margin:1em;
   color:whitesmoke;
 }
 h2{
-  font-size: 1.5em;
+  font-size: 5em;
   margin-left:5em;
   color:whitesmoke;
 }
@@ -17,7 +17,12 @@ h2{
  
    background-color:rgba(32, 21, 21, 0.904); 
   margin:2em 3em;
-  /* padding-top:1em; */
+   /* padding-top:10em;  */
 
+}
+
+.axis-color{
+   font-size: 2em; 
+  background-color: blueviolet;
 }
 
