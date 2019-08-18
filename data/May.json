@@ -457,7 +457,7 @@
   {"date":"2019-05-09","timeInHrs":21.62,"Time":"21:37","day":"Thursday","station":"SHEPPARD WEST STATION","Code":"MUIR","minDelay":4,"minGap":7,"bound":"N","line":"yu", "color":"yellow","vehicle":5671},
   {"date":"2019-05-09","timeInHrs":21.63,"Time":"21:38","day":"Thursday","station":"OLD MILL STATION","Code":"EUBK","minDelay":0,"minGap":0,"bound":"W","color":"green","line":"bd","vehicle":5072},
   {"date":"2019-05-09","timeInHrs":21.82,"Time":"21:49","day":"Thursday","station":"DUNDAS WEST STATION","Code":"SUUT","minDelay":0,"minGap":0,"bound":"E","color":"green","line":"bd","vehicle":5316},
-  {"date":"2019-05-09","timeInHrs":22.00,"Time":"22:00","day":"Thursday","station":"yuS/bd/SHEPPARD SUBWAY","Code":"MUO","minDelay":0,"minGap":0,"bound":"","line":"yu\bd","vehicle":0},
+  {"date":"2019-05-09","timeInHrs":22.00,"Time":"22:00","day":"Thursday","station":"yuS/bd/SHEPPARD SUBWAY","Code":"MUO","minDelay":0,"minGap":0,"bound":"","line":"yu/bd","vehicle":0},
   {"date":"2019-05-09","timeInHrs":22.50,"Time":"22:30","day":"Thursday","station":"BLOOR DANFORTH SUBWAY","Code":"MUGD","minDelay":0,"minGap":0,"bound":"","color":"green","line":"bd","vehicle":0},
   {"date":"2019-05-09","timeInHrs":22.78,"Time":"22:47","day":"Thursday","station":"JANE STATION","Code":"MUIS","minDelay":0,"minGap":0,"bound":"","color":"green","line":"bd","vehicle":0},
   {"date":"2019-05-09","timeInHrs":23.00,"Time":"23:00","day":"Thursday","station":"DAVISVILLE TO N/O BLOO","Code":"MUO","minDelay":0,"minGap":0,"bound":"S","line":"yu", "color":"yellow","vehicle":5796},

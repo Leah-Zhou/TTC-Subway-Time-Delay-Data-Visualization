@@ -4,25 +4,43 @@ body{
   
 }
 h1{
-  font-size: 7em;
+  font-size: 1.75em;
   margin:1em;
   color:whitesmoke;
 }
 h2{
-  font-size: 5em;
+  font-size: 1.25em;
   margin-left:5em;
   color:whitesmoke;
 }
 #time-line{
  
-   background-color:rgba(32, 21, 21, 0.904); 
-  margin:2em 3em;
-   /* padding-top:10em;  */
-
+   background-color:rgba(32, 21, 21, 0.904);   
+  margin:0 6em;
 }
 
 .axis-color{
-   font-size: 2em; 
-  background-color: blueviolet;
+   font-size:2em; 
+   fill: aquamarine;
+  }
+
+ .diagram{
+  display: grid;
+  grid-template-columns:auto 10;
+  align-content: flex-end;
+
 }
 
+.form{
+  grid-column: 2/3;
+  align-self:center;
+} 
+.months{
+  font-size: 1em;
+  color:whitesmoke;
+}
+
+.monthsForm{
+  widows: 200px;
+  height:100em;
+}
