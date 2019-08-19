@@ -7,6 +7,7 @@ h1{
   font-size: 1.75em;
   margin:1em;
   color:whitesmoke;
+  margin-left: 3em;
 }
 h2{
   font-size: 1.25em;
@@ -15,7 +16,7 @@ h2{
 }
 #time-line{
  
-   background-color:rgba(32, 21, 21, 0.904);   
+   background-color:rgba(32, 21, 21, 0.7);   
   margin:0 6em;
 }
 
@@ -26,16 +27,27 @@ h2{
 
  .diagram{
   display: grid;
-  grid-template-columns:auto 10;
+  grid-template-columns:auto 5;
   align-content: flex-end;
-
 }
+
 
 .form{
   grid-column: 2/3;
   align-self:center;
 } 
-.months{
+#form-in-months{
+ display: grid; 
+ grid-template-rows: 2em 2em 2em;
+  grid-row-gap: 2em; 
+justify-items: center;
+  
+}
+#btn-check{
+  width:4em;
+  justify-self:center;
+}
+.label{
   font-size: 1em;
   color:whitesmoke;
 }
@@ -43,4 +55,21 @@ h2{
 .monthsForm{
   widows: 200px;
   height:100em;
+}
+
+.all-btn{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.6em;
+}
+
+.btn-style{
+  background-color:rgba(211,211,211); 
+  border: none;
+  padding: 0.3em;
+  border-radius: 0.2em;
+}
+.color{
+  background-color:rgba(128, 0, 0, 0.507);
+  color: azure;
 }

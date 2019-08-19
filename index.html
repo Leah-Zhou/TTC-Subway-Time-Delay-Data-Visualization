@@ -15,7 +15,7 @@
 
   <h2>TTC subway Lines</h2>
   <section class="diagram">
-    <div class="subway-diagram">
+    <div>
       <svg viewBox = "0 0 500 200">
         <g>
          <circle cx="120" cy="17" r="10" fill="yellow" stroke="black" stroke-width="1"/>
@@ -44,13 +44,26 @@
 
     <div class="form">
       <form id="form-in-months">
-        <label name="months-options" class="months">Viewing in Month</label>
-        <select name="options" id="months-options">
-        </select>
-        <button id="btn-check">check</button>
-      </form> 
+        <div>
+            <label name="months-options" class="label">Viewing in Month</label>
+            <select name="options" id="months-options"></select>
+            <button id="btn-check" class="btn-style">check</button>
+        </div>
+        <div class="all-btn">
+          <button id="morning-btn" class="btn-style">morning:5am-11am</button>
+          <button id="noon-btn" class="btn-style">Noon:11am-15pm</button>
+          <button id="afternoon-btn" class="btn-style">Afternoon:15pm-19pm</button>
+          <button id="night-btn" class="btn-style">NightTime:19pm-0am</button>
+          <button id="midnight-btn" class="btn-style">Midnight:0am-5am</button>
+   
+        </div>
+      </form>
     </div>
   </section>
+
+
+
+        
    
 
 

@@ -1,24 +1,30 @@
 //load months in the options
 const months =[`January`,`February`,`March`,`April`,`May`]
+
  
+//grap html 
 const $form = document.getElementById(`form-in-months`)
 const $monthsOptions = document.getElementById(`months-options`)
 const $checkBtn = document.getElementById(`btn-check`)
+const $morningBtn =document.getElementById(`morning-btn`)
+const $noonBtn =document.getElementById(`noon-btn`)
+const $afternoonBtn =document.getElementById(`afternoon-btn`)
+const $nightBtn =document.getElementById(`night-btn`)
+const $midnightBtn =document.getElementById(`midnight-btn`)
 
-
+//load each option
 const loadOptions = (op)=>{
   return  `<option>${op}</option>`
 }
 
+//print all options
 const printOptions =()=>{
 $monthsOptions.innerHTML =months.map(loadOptions)
 }
 
+
+//call the funcitons
 printOptions();
-
-
-
-
 
 //grapping data in month
 const grapData =(dataset)=>{
@@ -56,7 +62,7 @@ const grapData =(dataset)=>{
   console.log(maxMins)
   
    var yAxis = d3.scaleLinear()
-                 .domain(minsRange)
+                 .domain([0,maxMins])
                  .range([height+topBottomPadding,topBottomPadding])
   
    const yScale= d3.axisLeft()
@@ -87,12 +93,12 @@ const grapData =(dataset)=>{
   console.log(hrsRange)
   
   var xAxis =  d3.scaleLinear()
-                 .domain([0,24])
+                 .domain(hrsRange)
                  .range([leftRightPadding,width+leftRightPadding])
                 
    const xScale = d3.axisBottom()
                     .scale(xAxis)
-                    .ticks(24)
+                    .ticks(maxHrs)
                   
   
   
@@ -118,8 +124,15 @@ const grapData =(dataset)=>{
 }
 
 
- $checkBtn.addEventListener(`click`,event=>{
-   event.preventDefault();
+  $checkBtn.addEventListener(`click`,event=>{
+    event.preventDefault();
+
+    $morningBtn.classList.remove(`color`)
+    $noonBtn.classList.remove(`color`)
+    $afternoonBtn.classList.remove(`color`)
+    $nightBtn.classList.remove(`color`)
+    $midnightBtn.classList.remove(`color`)
+
 
   const input = $form.options.value;
   console.log(input)
@@ -129,14 +142,69 @@ const grapData =(dataset)=>{
    
    grapData(dataset)
 
+   const morningData = dataset.filter(obj=>obj.timeInHrs<=11 && obj.timeInHrs>=5);
+    const noonData =dataset.filter(obj=>obj.timeInHrs>11 && obj.timeInHrs<=15);
+    const afternoonData =dataset.filter(obj=>obj.timeInHrs>15 && obj.timeInHrs<=19);
+    const nightData =dataset.filter(obj=>obj.timeInHrs>19 && obj.timeInHrs<=24);
+    const midnightData =dataset.filter(obj=>obj.timeInHrs>0 && obj.timeInHrs<5);
+    
+
+
+   $morningBtn.addEventListener(`click`,event=>{
+     event.preventDefault(); 
+     grapData(morningData)
+     $morningBtn.classList.add(`color`)
+     $noonBtn.classList.remove(`color`)
+     $afternoonBtn.classList.remove(`color`)
+     $nightBtn.classList.remove(`color`)
+     $midnightBtn.classList.remove(`color`)
+    })
+
+    $noonBtn.addEventListener(`click`,event=>{
+      event.preventDefault();
+      grapData(noonData)
+      $noonBtn.classList.add(`color`)
+      $morningBtn.classList.remove(`color`)
+      $afternoonBtn.classList.remove(`color`)
+      $nightBtn.classList.remove(`color`)
+      $midnightBtn.classList.remove(`color`)
+     })
+
+     $afternoonBtn.addEventListener(`click`,event=>{
+      event.preventDefault();
+      grapData(afternoonData)
+      $afternoonBtn.classList.add(`color`)
+      $morningBtn.classList.remove(`color`)
+      $noonBtn.classList.remove(`color`)
+      $nightBtn.classList.remove(`color`)
+      $midnightBtn.classList.remove(`color`)
+     })   
+     
+     $nightBtn.addEventListener(`click`,event=>{
+      event.preventDefault();
+      grapData(nightData)
+      $nightBtn.classList.add(`color`)
+      $noonBtn.classList.remove(`color`)
+      $afternoonBtn.classList.remove(`color`)
+      $morningBtn.classList.remove(`color`)
+      $midnightBtn.classList.remove(`color`)
+     })  
+
+     $midnightBtn.addEventListener(`click`,event=>{
+      event.preventDefault();
+      grapData(midnightData)
+      $midnightBtn.classList.add(`color`)
+      $noonBtn.classList.remove(`color`)
+      $afternoonBtn.classList.remove(`color`)
+      $nightBtn.classList.remove(`color`)
+      $morningBtn.classList.remove(`color`)
+     })  
 
  // narrow down the data from original data
 // dataset = dataset.filter(delay => delay.minDelay > 0 && delay.minDelay < 20).slice(0, 100);
 
  }) 
  })
-
-
 
 
 
