@@ -2,8 +2,8 @@
 const months =[`January`,`February`,`March`,`April`,`May`]
 
  
-//grap html 
-const $form = document.getElementById(`form-in-months`)
+//get dom 
+const $form = document.getElementById(`form-option`)
 const $monthsOptions = document.getElementById(`months-options`)
 const $checkBtn = document.getElementById(`btn-check`)
 const $morningBtn =document.getElementById(`morning-btn`)

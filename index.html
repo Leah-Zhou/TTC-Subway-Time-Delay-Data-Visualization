@@ -5,71 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css\index.css">
-  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p|Quicksand|Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <h1>The Delay Time of TTC Subway in 2019</h1>
+  <header>
+    <h1 class="title">Data Visualization of the TTC Subway Delay time in 2019</h1>
+  </header>
+
+  
+  <div class="form">
+    <h3>Please select the month and time slot to generate the graph</h3>
+    <form id="form-option">
+      <div>
+          <label name="months-options" class="label">Select Month</label>
+          <select name="options" id="months-options"></select>
+      </div>
+      <div>
+        <p>Select Timeslot</p>
+        <section class="all-btn">
+          <button id="morning-btn" class="btn-style">morning:<br/>5am-11am</button>
+          <button id="noon-btn" class="btn-style">Noon:<br/>11am-15pm</button>
+          <button id="afternoon-btn" class="btn-style">Afternoon:<br/>15pm-19pm</button>
+          <button id="night-btn" class="btn-style">Night:<br/>19pm-0am</button>
+          <button id="midnight-btn" class="btn-style">Midnight:<br/>0am-5am</button>
+        </section>
+      </div>
+      <button id="btn-check" class="btn-style">Generate Graph</button>
+    </form>
+  </div>
 
 
+  <div>
+     <h2>TTC subway Lines</h2>
+    <section class="diagram">
+      <div>
+        <svg viewBox = "0 0 500 200">
+          <g>
+           <circle cx="120" cy="17" r="10" fill="yellow" stroke="black" stroke-width="1"/>
+           <text x="114" y="22">1</text>
+           <line x1="160" y1="19" x2="300" y2="19" stroke="yellow" stroke-width="4" />
+          </g>
+          <g>
+             <circle cx="120" cy="59" r="10" fill="green" stroke="black" stroke-width="1"/>
+             <text x="114" y="64">2</text>
+             <line x1="160" y1="62" x2="300" y2="62" stroke="green" stroke-width="4"/>
+         </g>
+     
+         <g>
+             <circle cx="120" cy="101" r="10" fill="blue" stroke="black" stroke-width="1"/>
+             <text x="114" y="106">3</text>
+             <line x1="160" y1="104" x2="300" y2="104" stroke="blue" stroke-width="4"/>
+         </g>
+     
+         <g>
+             <circle cx="120" cy="143" r="10" fill="purple" stroke="black" stroke-width="1"/>
+             <text x="114" y="148">4</text>
+             <line x1="160" y1="146" x2="300" y2="146" stroke="purple" stroke-width="4"/>
+         </g>
+        </svg>
+      </div>
+    </section>
+  </div>
 
-  <h2>TTC subway Lines</h2>
-  <section class="diagram">
     <div>
-      <svg viewBox = "0 0 500 200">
-        <g>
-         <circle cx="120" cy="17" r="10" fill="yellow" stroke="black" stroke-width="1"/>
-         <text x="114" y="22">1</text>
-         <line x1="160" y1="19" x2="300" y2="19" stroke="yellow" stroke-width="4" />
-        </g>
-        <g>
-           <circle cx="120" cy="59" r="10" fill="green" stroke="black" stroke-width="1"/>
-           <text x="114" y="64">2</text>
-           <line x1="160" y1="62" x2="300" y2="62" stroke="green" stroke-width="4"/>
-       </g>
-   
-       <g>
-           <circle cx="120" cy="101" r="10" fill="blue" stroke="black" stroke-width="1"/>
-           <text x="114" y="106">3</text>
-           <line x1="160" y1="104" x2="300" y2="104" stroke="blue" stroke-width="4"/>
-       </g>
-   
-       <g>
-           <circle cx="120" cy="143" r="10" fill="purple" stroke="black" stroke-width="1"/>
-           <text x="114" y="148">4</text>
-           <line x1="160" y1="146" x2="300" y2="146" stroke="purple" stroke-width="4"/>
-       </g>
-      </svg>
+      <svg id="time-line" viewBox = "0 0 2600 1600"></svg>
     </div>
-
-    <div class="form">
-      <form id="form-in-months">
-        <div>
-            <label name="months-options" class="label">Viewing in Month</label>
-            <select name="options" id="months-options"></select>
-            <button id="btn-check" class="btn-style">check</button>
-        </div>
-        <div class="all-btn">
-          <button id="morning-btn" class="btn-style">morning:5am-11am</button>
-          <button id="noon-btn" class="btn-style">Noon:11am-15pm</button>
-          <button id="afternoon-btn" class="btn-style">Afternoon:15pm-19pm</button>
-          <button id="night-btn" class="btn-style">NightTime:19pm-0am</button>
-          <button id="midnight-btn" class="btn-style">Midnight:0am-5am</button>
-   
-        </div>
-      </form>
-    </div>
-  </section>
-
-
-
-        
-   
-
-
-
-
-  <svg id="time-line" viewBox = "0 0 2600 1600"></svg>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="js\index.js"></script>
