@@ -1,6 +1,6 @@
-@import url('_btn.css');
-@import url('_form.css');
-@import url('_graph.css');
+@import '_btn.css';
+@import '_form.css';
+@import '_graph.css';
 
 *{
   -webkit-box-sizing: border-box;
