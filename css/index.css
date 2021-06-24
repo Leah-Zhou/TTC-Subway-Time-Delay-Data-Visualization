@@ -1,10 +1,7 @@
-:root{
-  --fontColor:whitesmoke;
-  --lightBlack:#272727;
-  --secondary:#821b9e;
-  --sectionGap:1.5em;
-  --radius:5px;
-}
+@import '_btn.css';
+@import '_form.css';
+@import '_graph.css';
+
 *{
   box-sizing: border-box;
   margin:0;
@@ -12,12 +9,21 @@
 }
 body{
   font-family: 'Hind Siliguri', sans-serif;
-  background:linear-gradient( #272727 60%, black 90%);
+  background-color:var(--lightBlack);
   color:var(--fontColor);
   font-size: 16px;
   margin:1em 1.5em;
   line-height: 1.25;
   letter-spacing: 0.4px;
+  /* display: flex;
+  flex-flow: row nowrap; */
+}
+.header{
+  margin-top:10vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .title{
   font-size:clamp(1.7rem, 2vw, 1.75rem);
@@ -28,69 +34,26 @@ h2{
   font-size: 1.25em;
   margin-left:5em;
 }
-#time-line{
-   background-color:rgba(32, 21, 21, 0.7);   
-  margin:0 6em;
+.home{
+  position: relative;
+  top:0;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
-.axis-color{
-   font-size:2em; 
-   fill: aquamarine;
-  }
- .diagram{
-  display: grid;
-  grid-template-columns:auto 5;
-  align-content: flex-end;
+.move-home{
+display: none;
+opacity:0;
 }
-.form{
-  box-shadow: 3px 8px 16px rgba(117, 117, 117, 0.3);
-  background-color: rgba(255, 255, 255, 0.6);
-  /* background:linear-gradient( rgba(170, 35, 207, 0.4), rgba(99, 20, 122, 0.4)); */
-  color:var(--lightBlack);
-  align-self:center;
-  padding:1.5em 1em;
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-} 
-.form>h3{
-  margin-bottom:var(--sectionGap);
-}
-#form-option{
- display: grid; 
-justify-items: start;
-}
-#form-option >div{
-  margin-bottom:var(--sectionGap);
-}
-select[id="months-options"]{
-  width: 120%;
-  padding:0.6em 1em;
-  border-radius:var(--radius);
-  border:1px solid purple;
-}
-#btn-check{
-  width:100%;
-  margin:0 1em;
-  justify-self:center;
-}
-.label{
-  padding-right: 0.6em;
+#subway{
+  margin-top:20px;
+  min-width: 300px;
+  max-width: 500px;
+  opacity: 0.8;
 }
 
-.all-btn{
-  display: grid;
-  grid-template-columns: auto auto;
-}
 
-.btn-style{
-  background-color:var(--secondary);
-  color:white;
-  margin:1em;
-  border: none;
-  padding: 1em 0.6em;
-  border-radius: var(--radius);
-  min-width: 100px;
-}
-.color{
-  background-color:rgba(128, 0, 0, 0.507);
-  color: azure;
+@media screen and (min-width:760px){
+ .all-btn{
+   flex-flow: row wrap;
+ }
 }

@@ -1,0 +1,70 @@
+@import '_global.css';
+
+.all-btn{
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease;
+}
+.all-btn>button{
+  max-width: 150px;
+}
+.btn-style{
+  margin:1em;
+  border: none;
+  padding: 1em 0.6em;
+  border-radius: var(--radius);
+}
+.btn-start{
+  background-color: var(--secondary);
+  min-width: 100px;
+  max-width: 200px;
+  width:100%;
+  margin:0 1em;
+  font-weight: 600;
+  color:white;
+} 
+.time-opt{
+  color:gray;
+  background-color: white;
+  border:1px solid gray;
+  /* transition: color .6s ease; */
+}
+.time-opt:hover{
+  color:white;
+  font-weight: 600;
+  background-color: darkgray;
+  border-color: darkgray;
+}
+.form-close{
+  position: absolute;
+  top:5%;
+  right:5%;
+}
+.form-close img{
+  width: 1.2em;
+}
+.btn-check{
+  width:100%;
+  margin:1em 1em 0 1em;
+  color: white;
+  justify-self:center;
+  background-color: var(--secondary);
+  min-width: 100px;
+  max-width: 200px;
+  position: absolute;
+  bottom:40px;
+}
+.btn-view{
+  background-color:var(--secondary);
+  min-width: 100px;
+  max-width: 200px;
+  color:white;
+  font-weight: 600;
+}
+.active-opt{
+  color:white;
+  font-weight: 600;
+  background-color: darkgray;
+  border-color: darkgray;
+}

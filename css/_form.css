@@ -1,0 +1,47 @@
+@import '_global.css';
+
+.form{
+  display: grid;
+  align-items: center;
+  position: fixed;
+  top:-50%;
+  left:50%;
+  z-index: 20;
+  transform:translate(-50%, -50%);
+  min-width: 300px;
+  height: 400px;
+  box-shadow: 3px 8px 16px rgba(117, 117, 117, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  color:var(--lightBlack);
+  padding:3em 2em 1em 2em;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  transition: top 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+} 
+.show-form{
+  top:50%;
+}
+.form>h3{
+  margin-bottom:var(--sectionGap);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+#form-option{
+ display: grid; 
+justify-items: stretch;
+align-self: baseline;
+}
+#form-option >div{
+  margin-bottom:var(--sectionGap);
+}
+select[id="months-options"]{
+  width: 100%;
+  padding:0.6em 1em;
+  margin-top: .8em;
+  border-radius:var(--radius);
+  border:1px solid var(--secondary);
+}
+.label{
+  padding-right: 0.6em;
+}

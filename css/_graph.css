@@ -1,0 +1,71 @@
+@import '_global.css';
+
+.graph-section{
+  display: none;
+}
+.show-graph{
+  display: grid;
+}
+/* .graph{
+  position: relative;;
+} */
+/* .time-slot{
+  position: absolute;
+  top:5%;
+  right:10%;
+} */
+#time-line{
+ margin:0 3em;
+ min-width: 500px;
+}
+.axis-color{
+  font-size:2em; 
+ }
+
+.legend{
+  justify-self: end;
+  position: relative;
+  top:5%;
+  right: 5%;
+ max-width: 600px;
+ margin:1em;
+ border:2px solid var(--secondary);
+ border-radius: 10px;
+ padding:1em;
+}
+.diagram{
+  display: flex;
+  flex-flow: row wrap;
+}
+.diagram>div{
+ display: flex;
+ flex-basis: 50%;
+ margin-bottom: 0.8em;
+ align-items: center;
+}
+.diagram-line{
+ width: 50px;
+ height: 5px;
+ border-radius: 10px;
+ /* background-color: white; */
+ margin-right: 1em;
+}
+.diagram-line +p{
+  font-size: 13px;
+}
+.line-yellow{
+ background-color: yellow;
+}
+.line-green{
+ background-color: rgb(51, 184, 51);
+}
+.line-blue{
+ background-color: rgb(122, 190, 230);
+}
+.line-purple{
+ background-color: purple;
+}
+/* .color{
+ background-color:var(--secondary);
+ color: azure;
+} */

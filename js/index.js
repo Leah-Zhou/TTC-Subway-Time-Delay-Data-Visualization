@@ -1,7 +1,3 @@
-//load months in the options
-const months =[`January`,`February`,`March`,`April`,`May`]
-
- 
 //get dom 
 const $form = document.getElementById(`form-option`)
 const $monthsOptions = document.getElementById(`months-options`)
@@ -11,6 +7,49 @@ const $noonBtn =document.getElementById(`noon-btn`)
 const $afternoonBtn =document.getElementById(`afternoon-btn`)
 const $nightBtn =document.getElementById(`night-btn`)
 const $midnightBtn =document.getElementById(`midnight-btn`)
+const startBtn =document.querySelectorAll('.generate-graph');
+const closeBtn=document.querySelector('.form-close');
+const viewBtn=document.querySelector('.view-more');
+const optGroup=document.querySelector('.all-btn');
+const form =document.querySelector('.form');
+const home=document.querySelector('.header');
+const graphSection=document.querySelector('.graph-section');
+
+startBtn.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+            form.classList.toggle('show-form')
+      })
+})
+
+closeBtn.addEventListener('click', ()=>{
+      form.classList.toggle('show-form')
+})
+
+viewBtn.addEventListener('click', ()=>{
+      optGroup.style.display="flex";
+})
+optGroup.addEventListener('click', e=>{
+      if(e.target.classList.contains('time-opt')){
+           let prevActive =document.querySelector('.active-opt');
+           if(prevActive!=null){
+              prevActive.classList.remove('active-opt')
+           }
+            e.target.classList.add('active-opt')
+      }
+})
+const illustrationAnimate=()=>{
+      let tl = gsap.timeline();
+      tl.from('.title', {opacity:0, y:-50, duration:1, ease:"back.out(1)"}, "<")
+        .from('.btn-start',{opacity:0, y:-50, duration:1, ease:"back.out(1)"}, "-=0.5")
+        .from('#subway', {x:-1000, duration:1,ease:"back.out(1.75)"})
+        .fromTo('#holder-left', {rotate:-2}, {rotate:6, duration:1.5, repeat:-1, ease:"power2.in", yoyo: true})
+        .fromTo('#holder-right',{rotate:-2}, {rotate:5, duration:1.5, repeat:-1, ease:"power2.in", yoyo:true}, "<")
+    }
+illustrationAnimate();
+
+
+//load months in the options
+const months =[`January`,`February`,`March`,`April`,`May`]
 
 //load each option
 const loadOptions = (op)=>{
@@ -28,8 +67,6 @@ printOptions();
 
 //grapping data in month
 const grapData =(dataset)=>{
-
-
   const newData = dataset.filter(arr=>arr.minDelay!==0)
   const quantities = newData.length;
   const height = 1300;
@@ -60,7 +97,6 @@ const grapData =(dataset)=>{
   const minsRange =d3.extent(newData,obj=>obj.minDelay)
   
   console.log(maxMins)
-  
    var yAxis = d3.scaleLinear()
                  .domain([0,maxMins])
                  .range([height+topBottomPadding,topBottomPadding])
@@ -113,26 +149,23 @@ const grapData =(dataset)=>{
   canvas.append(`text`)
         .attr(`x`,`1250`)
         .attr(`y`,`1580`)
-        .text(`Time in Hour`)
+        .text(`Time Slot`)
         .classed(`axis-color`,true)
      
   canvas.append(`text`)
         .attr(`x`,`80`)
         .attr(`y`,`200`)
-        .text(`Minutes`)
+        .text(`Delay Minutes`)
         .classed(`axis-color`,true)
 }
 
 
-  $checkBtn.addEventListener(`click`,event=>{
+  $form.addEventListener(`submit`,event=>{
     event.preventDefault();
-
-    $morningBtn.classList.remove(`color`)
-    $noonBtn.classList.remove(`color`)
-    $afternoonBtn.classList.remove(`color`)
-    $nightBtn.classList.remove(`color`)
-    $midnightBtn.classList.remove(`color`)
-
+//     gsap.to('.home', {y:-1000, opacity:0, display:none, duration:2});
+     home.classList.add("move-home");
+     form.classList.toggle('show-form');
+     graphSection.classList.add('show-graph');
 
   const input = $form.options.value;
   console.log(input)
@@ -153,51 +186,51 @@ const grapData =(dataset)=>{
    $morningBtn.addEventListener(`click`,event=>{
      event.preventDefault(); 
      grapData(morningData)
-     $morningBtn.classList.add(`color`)
-     $noonBtn.classList.remove(`color`)
-     $afternoonBtn.classList.remove(`color`)
-     $nightBtn.classList.remove(`color`)
-     $midnightBtn.classList.remove(`color`)
+//      $morningBtn.classList.add(`color`)
+//      $noonBtn.classList.remove(`color`)
+//      $afternoonBtn.classList.remove(`color`)
+//      $nightBtn.classList.remove(`color`)
+//      $midnightBtn.classList.remove(`color`)
     })
 
     $noonBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(noonData)
-      $noonBtn.classList.add(`color`)
-      $morningBtn.classList.remove(`color`)
-      $afternoonBtn.classList.remove(`color`)
-      $nightBtn.classList.remove(`color`)
-      $midnightBtn.classList.remove(`color`)
+      // $noonBtn.classList.add(`color`)
+      // $morningBtn.classList.remove(`color`)
+      // $afternoonBtn.classList.remove(`color`)
+      // $nightBtn.classList.remove(`color`)
+      // $midnightBtn.classList.remove(`color`)
      })
 
      $afternoonBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(afternoonData)
-      $afternoonBtn.classList.add(`color`)
-      $morningBtn.classList.remove(`color`)
-      $noonBtn.classList.remove(`color`)
-      $nightBtn.classList.remove(`color`)
-      $midnightBtn.classList.remove(`color`)
+      // $afternoonBtn.classList.add(`color`)
+      // $morningBtn.classList.remove(`color`)
+      // $noonBtn.classList.remove(`color`)
+      // $nightBtn.classList.remove(`color`)
+      // $midnightBtn.classList.remove(`color`)
      })   
      
      $nightBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(nightData)
-      $nightBtn.classList.add(`color`)
-      $noonBtn.classList.remove(`color`)
-      $afternoonBtn.classList.remove(`color`)
-      $morningBtn.classList.remove(`color`)
-      $midnightBtn.classList.remove(`color`)
+      // $nightBtn.classList.add(`color`)
+      // $noonBtn.classList.remove(`color`)
+      // $afternoonBtn.classList.remove(`color`)
+      // $morningBtn.classList.remove(`color`)
+      // $midnightBtn.classList.remove(`color`)
      })  
 
      $midnightBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(midnightData)
-      $midnightBtn.classList.add(`color`)
-      $noonBtn.classList.remove(`color`)
-      $afternoonBtn.classList.remove(`color`)
-      $nightBtn.classList.remove(`color`)
-      $morningBtn.classList.remove(`color`)
+      // $midnightBtn.classList.add(`color`)
+      // $noonBtn.classList.remove(`color`)
+      // $afternoonBtn.classList.remove(`color`)
+      // $nightBtn.classList.remove(`color`)
+      // $morningBtn.classList.remove(`color`)
      })  
 
  // narrow down the data from original data
