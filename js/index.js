@@ -103,7 +103,7 @@ const grapData =(dataset)=>{
   
    const yScale= d3.axisLeft()
                   .scale(yAxis)
-                   .ticks(10)
+                   .ticks(5)
                   
   
     canvas.append(`g`)

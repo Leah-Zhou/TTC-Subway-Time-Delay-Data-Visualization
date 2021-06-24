@@ -1,7 +1,12 @@
-@import 'css/_btn.css';
-@import 'css/_form.css';
-@import 'css/_graph.css';
-
+:root{
+  --fontColor:#272727;
+  --lightBlack:smokewhite;
+  --secondary:#6B90BF;
+  --darkSecondary:##2D3073;
+  --iconColor:#F2BD1D;
+  --sectionGap:1.5em;
+  --radius:5px;
+}
 *{
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -16,8 +21,6 @@ body{
   margin:1em 1.5em;
   line-height: 1.25;
   letter-spacing: 0.4px;
-  /* display: flex;
-  flex-flow: row nowrap; */
 }
 .header{
   margin-top:10vh;
