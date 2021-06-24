@@ -1,6 +1,6 @@
-@import '_btn.css';
-@import '_form.css';
-@import '_graph.css';
+@import 'css/_btn.css';
+@import 'css/_form.css';
+@import 'css/_graph.css';
 
 *{
   -webkit-box-sizing: border-box;
