@@ -1,19 +1,13 @@
 @import '_global.css';
 
+
 .graph-section{
   display: none;
 }
 .show-graph{
+  display: -ms-grid;
   display: grid;
 }
-/* .graph{
-  position: relative;;
-} */
-/* .time-slot{
-  position: absolute;
-  top:5%;
-  right:10%;
-} */
 #time-line{
  margin:0 3em;
  min-width: 500px;
@@ -23,7 +17,8 @@
  }
 
 .legend{
-  justify-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
   position: relative;
   top:5%;
   right: 5%;
@@ -34,20 +29,29 @@
  padding:1em;
 }
 .diagram{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 .diagram>div{
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
- flex-basis: 50%;
+ -ms-flex-preferred-size: 50%;
+     flex-basis: 50%;
  margin-bottom: 0.8em;
- align-items: center;
+ -webkit-box-align: center;
+     -ms-flex-align: center;
+         align-items: center;
 }
 .diagram-line{
  width: 50px;
  height: 5px;
  border-radius: 10px;
- /* background-color: white; */
  margin-right: 1em;
 }
 .diagram-line +p{
@@ -65,7 +69,3 @@
 .line-purple{
  background-color: purple;
 }
-/* .color{
- background-color:var(--secondary);
- color: azure;
-} */

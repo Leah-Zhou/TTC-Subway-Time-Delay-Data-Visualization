@@ -186,51 +186,26 @@ const grapData =(dataset)=>{
    $morningBtn.addEventListener(`click`,event=>{
      event.preventDefault(); 
      grapData(morningData)
-//      $morningBtn.classList.add(`color`)
-//      $noonBtn.classList.remove(`color`)
-//      $afternoonBtn.classList.remove(`color`)
-//      $nightBtn.classList.remove(`color`)
-//      $midnightBtn.classList.remove(`color`)
     })
 
     $noonBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(noonData)
-      // $noonBtn.classList.add(`color`)
-      // $morningBtn.classList.remove(`color`)
-      // $afternoonBtn.classList.remove(`color`)
-      // $nightBtn.classList.remove(`color`)
-      // $midnightBtn.classList.remove(`color`)
      })
 
      $afternoonBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(afternoonData)
-      // $afternoonBtn.classList.add(`color`)
-      // $morningBtn.classList.remove(`color`)
-      // $noonBtn.classList.remove(`color`)
-      // $nightBtn.classList.remove(`color`)
-      // $midnightBtn.classList.remove(`color`)
      })   
      
      $nightBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(nightData)
-      // $nightBtn.classList.add(`color`)
-      // $noonBtn.classList.remove(`color`)
-      // $afternoonBtn.classList.remove(`color`)
-      // $morningBtn.classList.remove(`color`)
-      // $midnightBtn.classList.remove(`color`)
      })  
 
      $midnightBtn.addEventListener(`click`,event=>{
       event.preventDefault();
       grapData(midnightData)
-      // $midnightBtn.classList.add(`color`)
-      // $noonBtn.classList.remove(`color`)
-      // $afternoonBtn.classList.remove(`color`)
-      // $nightBtn.classList.remove(`color`)
-      // $morningBtn.classList.remove(`color`)
      })  
 
  // narrow down the data from original data

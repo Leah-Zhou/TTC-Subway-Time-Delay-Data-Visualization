@@ -2,8 +2,14 @@
 
 .all-btn{
   display: none; 
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center; 
+      -ms-flex-pack: center; 
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 .all-btn>button{
@@ -48,7 +54,8 @@
   width:100%;
   margin:1em 1em 0 1em;
   color: white;
-  justify-self:center;
+  -ms-grid-column-align:center;
+      justify-self:center;
   background-color: var(--secondary);
   min-width: 100px;
   max-width: 200px;
